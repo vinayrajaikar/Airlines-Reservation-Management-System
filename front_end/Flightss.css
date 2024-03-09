@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#main_container{
+    width: 100%;
+    height: 200vh;
+    /* height: fit-content; */
+    background-color: #fa0808;
+    padding: 0.1%;
+    background-image: url("https://img.freepik.com/free-photo/airplane-flying-clouds_1339-7565.jpg?t=st=1709831591~exp=1709835191~hmac=7a5a243d40c139d78d394fcf18b809b7b52fa54f267b34a93f80647d0fef3c8d&w=996");
+   background-image: url("https://img.freepik.com/free-photo/jumbo-jet-flying-sky_23-2150895681.jpg?t=st=1709877544~exp=1709881144~hmac=7254bdae87c671b1c11202329678634792c6f1627d99f0cb0e65cbac45b2ac4e&w=996");
+   background-image: linear-gradient(100%);
+   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url("https://img.freepik.com/free-photo/jumbo-jet-flying-sky_23-2150895681.jpg?t=st=1709877544~exp=1709881144~hmac=7254bdae87c671b1c11202329678634792c6f1627d99f0cb0e65cbac45b2ac4e&w=996");
+   background-size: cover;
+   background-position:15% 1%;
+}
+
+#heading{
+    width: 35%;
+    height: 2%;
+    /* background-color: aqua; */
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    padding: 1vw;
+    margin: 0 33%;
+    font-size: 40px;
+    /* font-style: s; */
+    font-weight: 100;
+    margin-top: 30px;
+    color: whitesmoke;
+    color: #c3e1fa;
+}
+
+#buttons{
+    justify-content: space-around;
+    margin-left: -30px;
+    display: flex;
+    /* background-color: aquamarine; */
+    margin-top: 10px;
+    height: 10%;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    /* margin: 0 0.1%; */
+    
+}
+/* #bt1{
+    padding: 50px 30px;
+    height: 30%;
+    width: 30%;
+    background-color: blueviolet;
+} */
+#bt1 button{
+    font-size: 25px;
+    border-radius: 22px;
+    padding:10px 10px;
+    /* background-color: rgba(20, 92, 151, 0.991); */
+    background-color: #508bb0;
+    color: #e8e9f2;
+    border: none;
+
+}
+#bt1 button:hover{
+
+    background-color: #0E90E0; /* Green */
+    border: none;
+    color: white;
+    /* padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* font-size: 20px; */
+    /* margin: 4px 2px; */
+    transition-duration: 0.4s ease;
+    cursor: pointer;
+    transform: translateY(-2px);
+    /* border-radius: 8px; */
+
+}
+
+#bt2 {
+    font-size: 30px;
+    /* border-radius: 22px;
+    padding:15px 15px; */
+}
+
+#bt2 label{
+    /* color: #2a3692f3; */
+    color:#b8d6ef
+}
+
+
+#bt3 button{
+    font-size: 25px;
+    border-radius: 22px;
+    padding:10px 10px;
+    border: none;
+    background-color: #0e90e0;
+    color: #f2e8e8;
+
+}
+
+#bt3 button:hover{
+
+    background-color: #07c4f4; /* Green */
+    border: none;
+    color: white;
+    /* padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* font-size: 20px; */
+    /* margin: 4px 2px; */
+    transition-duration: 0.4s ease;
+    cursor: pointer;
+    transform: translateY(-2px);
+    /* border-radius: 8px; */
+
+}
+
+#bt2 #dateInput{
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.388);
+    color: #fff;
+    text-align: center;
+
+}
+
+#Table{
+    width: 90%;
+    height: 50%;
+    padding-left: 5.5vw;
+    margin-top: 10px;
+    /* border: 1px solid black; */
+
+}
+#Table table {
+    width: 100%;
+    /* border-collapse: collapse; */
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 13px;
+    background-color: rgba(0, 0, 0, 0.461);
+    /* background-color: rgba(255, 255, 0, 0.233); */
+  }
+#Table th, td {
+    font-size: 25px;
+    font-weight: 50;
+    padding: 8px;
+    border-bottom: 1px solid white;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.888);
+  }
+#Table  th {
+    background-color: rgb(191, 50, 31);
+    color: white;
+    font-weight:400;
+    padding: 15px;
+    border-radius: 6px;
+  } 
+
+/* tr{
+    border: 1px solid black;
+  } */

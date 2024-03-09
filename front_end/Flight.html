@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Schedule</title>
+<!-- <style> -->
+  <!-- /* body {
+    font-family: Arial, sans-serif;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  } */ -->
+<!-- </style> -->
+<link rel="stylesheet" href="Flightss.css">
+</head>
+<body>
+  <div id="main_container">
+    <div id="heading">
+      <h2>Flight Schedule</h2>
+    </div>
+
+    <div id="buttons">
+      <div id="bt1">
+        <button onclick="all_flights()">Available flights</button>
+      </div>
+      <div id="bt2">
+        <label for="dateInput">Date:</label>
+        <input type="date" id="dateInput">
+      </div>
+      <div id="bt3">
+        <button onclick="filterFlights()">Show Flights</button>
+      </div>
+    </div>
+
+
+
+    <div id="Table">
+      <table id="filteredFlightTable" style="padding: 1;" >
+        <thead>
+          <tr>
+            <th>Flight Number</th>
+            <th>Flight Name</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="filteredFlightTableBody">
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+
+
+<script>
+
+
+  async function fetchFlightsByDate(date) {
+    try {
+      const response = await fetch(`http://localhost:5000/flights?date=${date}`);
+      if (!response.ok) {
+        throw new Error('Error fetching flights');
+      }
+      const data = await response.json();
+      displayFilteredFlights(data);
+    } catch (error) {
+      console.error('Error fetching flights:', error);
+    }
+  }
+
+  // -----------
+  async function all_flights() {
+    try {
+      const response = await fetch(`http://localhost:5000/Allflights`);
+      if (!response.ok) {
+        throw new Error('Error fetching flights');
+      }
+      const data = await response.json();
+      displayFlights(data);
+    } catch (error) {
+      console.error('Error fetching flights:', error);
+    }
+  }
+
+
+  async function book(){
+    
+  }
+  // ------------
+  function displayFlights(flights) {
+    const tableBody = document.getElementById("filteredFlightTableBody");
+    tableBody.innerHTML = "";
+    flights.forEach(flight => {
+      const row = `<tr>
+                    <td>${flight.flight_no}</td>
+                    <td>${flight.flight_name}</td>
+                    <td>${flight.source}</td>
+                    <td>${flight.destination}</td>
+                    <td>${flight.departure_time}</td>
+                    <td>${flight.arrival_time}</td>
+                    <td>${flight.date.substring(0,10)}</td>
+                  </tr>`;
+      tableBody.insertAdjacentHTML("beforeend", row);
+    });
+  }
+  // -----------------------
+
+  function displayFilteredFlights(flights) {
+    const tableBody = document.getElementById("filteredFlightTableBody");
+    tableBody.innerHTML = "";
+    flights.forEach(flight => {
+      const row = `<tr>
+                    <td>${flight.flight_no}</td>
+                    <td>${flight.flight_name}</td>
+                    <td>${flight.source}</td>
+                    <td>${flight.destination}</td>
+                    <td>${flight.departure_time}</td>
+                    <td>${flight.arrival_time}</td>
+                    <td>${flight.date.substring(0,10)}</td>
+                  </tr>`;
+      tableBody.insertAdjacentHTML("beforeend", row);
+    });
+  }
+
+
+
+  function filterFlights() {
+    const dateInput = document.getElementById("dateInput").value;
+    if (dateInput) {
+      fetchFlightsByDate(dateInput);
+    } else {
+      alert("Please enter a valid date");
+    }
+  }
+</script>
+
+</body>
+</html>
+

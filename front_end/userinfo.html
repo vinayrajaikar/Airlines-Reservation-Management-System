@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="userinfo.css">
+</head>
+<body>
+    <div id="main-container">
+        <center>
+
+            <div id="heading-div">
+                <h2>Check Your Booking Here</h2>
+            </div>
+            <!-- <div id="imagediv">
+                <img src="https://img.freepik.com/free-vector/airplane-flying-around-globe_1284-42938.jpg?t=st=1709976296~exp=1709979896~hmac=737d311cf1f6fec09cfe91c780a56a8d76ee6d4fb2b99abac667a8ebdfe3c87a&w=740" alt="">
+            </div> -->
+
+        </center>
+
+
+
+            <div id="Takeuserinfo-div" style="display: block;">
+                <input type="text" id="Name" placeholder="Name :"><br><br>
+                <input type="text" id="Code" placeholder="Code :"><br><br>
+                <button id="btn1" onclick="BookingDetails()">Enter</button>
+            </div>
+
+
+
+
+
+        <!-- Div to display user information -->
+        <div id="userInfoDiv" style="display: none;">
+            <div id="userinfoheding">
+                <h3>Happy Flight!</h3>
+            </div>
+
+            <div id="details">
+                <p>Name: <span id="userInfoName"></span></p>
+                <p>No. of Members: <span id="userInfoMembers"></span></p>
+                <p>Source: <span id="userInfoSource"></span></p>
+                <p>Destination: <span id="userInfoDestination"></span></p>
+                <p>Date: <span id="userInfoDate"></span></p>
+                <p>Flight No: <span id="userInfoFlightNo"></span></p>
+                <p>Flight Name: <span id="userInfoFlightName"></span></p>
+                <p>Departure Time: <span id="userInfoDepartureTime"></span></p>
+                <p>Arrival Time: <span id="userInfoArrivalTime"></span></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+<script>
+  async function checkBookingDetails(Code, Name) {
+    try {
+      const response = await fetch(`http://localhost:5000/checkbooking?Code=${Code}&Name=${Name}`);
+      if (!response.ok) {
+        throw new Error('Error fetching user information');
+      }
+      const data = await response.json();
+      displayBookeddata(data);
+    } catch (error) {
+      console.error('Error fetching user information:', error);
+    }
+  }
+
+  function displayBookeddata(bookings) {
+    if (bookings.length > 0) {
+      const booking = bookings[0];
+      document.getElementById("userInfoName").innerText = booking.Name;
+      document.getElementById("userInfoMembers").innerText = booking.No_of_Members;
+      document.getElementById("userInfoSource").innerText = booking.source;
+      document.getElementById("userInfoDestination").innerText = booking.destination;
+      document.getElementById("userInfoDate").innerText = booking.Date.substring(0,10);
+      document.getElementById("userInfoFlightNo").innerText = booking.flight_no;
+      document.getElementById("userInfoFlightName").innerText = booking.flight_name;
+      document.getElementById("userInfoDepartureTime").innerText = booking.departure_time;
+      document.getElementById("userInfoArrivalTime").innerText = booking.arrival_time;
+
+      // Show the user information div
+      document.getElementById("userInfoDiv").style.display = "block";
+      document.getElementById("Takeuserinfo-div").style.display = "none";
+    } else {
+      console.log("No bookings found.");
+    }
+  }
+
+  function BookingDetails() {
+    const Code = document.getElementById("Code").value;
+    const Name = document.getElementById("Name").value;
+    if (Code && Name) {
+      checkBookingDetails(Code, Name);
+    } else {
+      alert("Please enter a valid Code and Name");
+    }
+  }
+</script>
+</html>

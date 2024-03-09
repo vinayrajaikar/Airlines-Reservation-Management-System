@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert Booking Data</title>
+<link rel="stylesheet" href="Bookings.css">
+</head>
+<body>
+    <div id="main-div">
+        <div id="heading-div">
+            <h2>Book Your Flights Here</h2>
+        </div>
+
+        <div id="form-div">
+            <form id="bookingForm">
+                <div id="Bookdiv1">
+                    <input type="text" id="name" name="name" placeholder="Name"><br>
+            
+                    <!-- <input type="text" id="mem" name="mem" placeholder="No of members"><br> -->
+                    <select id="mem" name="mem" >
+                        <option value="" disabled selected>No of members</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <br>
+    
+
+                    <input type="date" id="date" name="date" placeholder="Date"><br>
+
+                </div>
+
+            <div id="Bookdiv2">
+                <!-- <input type="text" id="source" name="source" placeholder="Source:"><br> -->
+                <select id="source" name="source">
+                    <option value="" disabled selected>From</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Banglore">Bangalore</option>
+                </select>
+                
+
+                <!-- <input type="text" id="destination" name="destination" placeholder="Destination"><br> -->
+                <select id="destination" name="destination">
+                    <option value="" disabled selected>To</option>
+                    <option value="Mumbai">Delhi</option>
+                    <option value="Delhi">Mumbai</option>
+                    <option value="Pune">Kolkata</option>
+                    <option value="Kolkata">Pune</option>
+                    <option value="Banglore">Bangalore</option>
+                </select>
+            
+
+            
+                <input type="text" id="fno" name="fno" placeholder="Flight number"><br>
+
+                <input type="text" id="code" name="code" placeholder="code"><br>
+
+            </div>
+                
+            <div id="submit-button">
+                <button type="button" onclick="insertBookingData()">SUBMIT</button>
+            </div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<script>
+// async function insertBookingData() {
+//     try {
+//         const flightid = document.getElementById('fid').value;
+//         const flightName = document.getElementById('flightName').value;
+//         const date = document.getElementById('date').value;
+//         const source = document.getElementById('source').value;
+//         const destination = document.getElementById('destination').value;
+//         const code = document.getElementById('code').value;
+
+//         const response = await fetch('http://localhost:5000/booking', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({
+//                 id: flightid,
+//                 Flight_name: flightName,
+//                 date: date,
+//                 source: source,
+//                 destination: destination,
+//                 code: code
+//             })
+//         });
+
+//         if (!response.ok) {
+//             throw new Error('Failed to insert booking data');
+//         }
+
+//         console.log('Booking data inserted successfully');
+//     } catch (error) {
+//         console.error('Error inserting booking data:', error);
+//     }
+// }
+
+
+
+async function insertBookingData() {
+    try {
+        const Name = document.getElementById('name').value;
+        const Members = document.getElementById('mem').value;
+        const flight_no = document.getElementById('fno').value;
+        const date = document.getElementById('date').value;
+        const source = document.getElementById('source').value;
+        const destination = document.getElementById('destination').value;
+        const code = document.getElementById('code').value;
+
+        const response = await fetch('http://localhost:5000/bookingss', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                Name:Name,
+                No_of_Members:Members,
+                source: source,
+                destination: destination,
+                date: date,
+                flight_no:flight_no,
+                Code:code,
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to insert booking data');
+        }
+
+        console.log('Booking data inserted successfully');
+    } catch (error) {
+        console.error('Error inserting booking data:', error);
+    }
+}
+</script>
+
+</body>
+</html>

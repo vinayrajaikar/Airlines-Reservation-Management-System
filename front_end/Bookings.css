@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body,html{
+    /* font-family: monospace; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#main-div{
+    /* background-color: burlywood; */
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url("https://img.freepik.com/free-photo/jumbo-jet-flying-sky_23-2150895677.jpg?t=st=1709908568~exp=1709912168~hmac=6de8eb1c6588763173516e732fa32ba1466335acbd67dd6e3562cb916be7df0d&w=996");
+    background-size: cover;
+    background-position: center;
+  
+    /* padding:10% 10%; */
+}
+
+#heading-div{
+    position: absolute;
+    font-size: 30px;
+    width: 40%;
+    /* background-color: yellow; */
+    left: 30%;
+    top: 5%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+}
+
+#form-div{
+    /* background-color: aquamarine; */
+    width:80%;
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    /* border: none; */
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.459);
+
+}
+
+#Bookdiv1{
+    /* background-color: rgba(238, 130, 238, 0.348); */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+    /* padding: 1%; */
+}
+#name{
+    width: 20%;
+    height: 40%;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+}
+#name::placeholder {
+    color: black; /* Change the color of the placeholder text */
+}
+
+#mem{
+    width: 20%;
+    height: 40%;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+}
+
+#date{
+    width: 20%;
+    height: 40%;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+}
+
+#Bookdiv2{
+    /* background-color: rgba(70, 131, 180, 0.33); */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 20vh;
+}
+
+#source{
+    width: 15%;
+    height: 40%;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+}
+
+#destination{
+    width: 15%;
+    height: 40%;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+}
+
+#fno{
+    width: 15%;
+    height: 40%;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+}
+
+#fno::placeholder {
+    color: black; /* Change the color of the placeholder text */
+}
+
+#code{
+    width: 15%;
+    height: 40%;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+}
+
+#code::placeholder {
+    color: black; /* Change the color of the placeholder text */
+}
+
+#submit-button{
+    width:100%;
+    height: 20vh;
+    /* background-color: rgba(83, 214, 223, 0.341);    */
+    /* justify-content: center;
+    text-align: center;
+    align-items: center; */
+}
+
+#submit-button button{
+    width: 15%;
+    height: 35%;
+    border: none;
+    border-radius:45px;
+    justify-content: center;
+    font-size: 20px;
+    margin:4% 40%;
+    background-color: rgb(23, 94, 165);
+    font-size: 30px;
+    font-weight: 100;
+    color: white;
+}

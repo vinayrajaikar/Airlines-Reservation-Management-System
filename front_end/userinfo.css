@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#main-container{
+    width: 100vw;
+    height: 100vh;
+    /* background-color:rgba(255, 255, 255, 0.92);
+    background-image: url("https://img.freepik.com/free-photo/jumbo-jet-flying-sky_23-2150895675.jpg?t=st=1709977458~exp=1709981058~hmac=0c3ba0f31b8b8ee39dcb3d6675b2752b9bbf1389a3a10d5d428e3211a7ce6f20&w=900");
+    background-size: cover; */
+    background-position: 20% 10%;
+    position: relative;
+    text-align: center;
+    /* padding: 40px; */
+}
+
+
+/* #imagediv img{
+    width: 15%;
+} */
+
+#heading-div{
+    font-size: 40px;
+    width: 50%;
+    /* background-color: yellow; */
+    text-align: center;
+    padding: 20px;
+    color:rgb(10, 9, 9);
+}
+
+#Takeuserinfo-div{
+    width: 30%;
+    height: 20%;
+    background-color: #5cbfe6;
+    margin: 10% 33%;
+    padding: 2%;
+    border: none;
+    border-radius: 20px;
+}
+
+#Takeuserinfo-div #Name{
+    width: 43%;
+    height: 25%;
+    font-size: 20px;
+    /* text-align: center; */
+    padding-left: 3%;
+}
+#Takeuserinfo-div #Code{
+    width: 43%;
+    height: 25%;
+    font-size: 20px;
+    padding-left: 3%;
+}
+
+#Takeuserinfo-div #btn1{
+    width: 30%;
+    height: 25%;
+    margin: 0%;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    background-color: rgba(9, 237, 199, 0.966);
+    color: rgb(0, 0, 0);
+}
+
+#userInfoDiv{
+    width: 28%;
+    height: 67%;
+    /* background-color: thistle; */
+    background-color: rgb(34, 171, 245);
+    text-align: left;
+    padding: 10px;
+    margin:2.5% 35%;
+    border-radius: 20px;
+}
+
+#userInfoDiv #userinfoheding{
+    font-size: 30px;
+    text-align: center;
+}
+
+#userInfoDiv #details{
+    font-size: 25px;
+    text-align: 1.5%;
+    /* background-color: rgb(139, 227, 242); */
+    background-color: rgba(0, 0, 0, 0.801);
+    color: white;
+    width: 80%;
+    height: 87%;
+    padding-top:6%;
+    padding-left: 20%;
+    line-height: 1.6;
+    border: 1.5px dashed black;
+    border-radius: 20px;
+}
+
+#userInfoDiv p{
+    
+}
